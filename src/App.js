@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import DummyScreen from './Components/Layout/DummyScreen';
 import Navbar from './Components/Layout/Navbar'
 import ProfileDetails from './Components/Layout/ProfileDetails';
+import ForgetPasswordPage from './Components/Pages/ForgetPasswordPage';
 import Login from './Components/Pages/Login';
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Login />
+        </Route>
+        <Route exact path='/forget'>
+          <ForgetPasswordPage />
         </Route>
         <Route exact path='/profile'>
           <DummyScreen />
