@@ -20,18 +20,17 @@ function App() {
           <ForgetPasswordPage />
         </Route>
         <Route exact path='/profile'>
-          <DummyScreen />
+          {ctx.token && <DummyScreen />}
+          {!ctx.token && <Redirect to='/' />}
         </Route>
         <Route exact path='/details'>
           <ProfileDetails />
         </Route>
         <Route exact path='/expenses'>
-          {ctx.token && <Expenses />}
-          {!ctx.token && <Redirect to='/' />}
+          {ctx.isLoggedIn && <Expenses />}
+          {!ctx.isLoggedIn && <Redirect to='/' />}
         </Route>
-
       </Switch>
-
     </Fragment>
   );
 }
